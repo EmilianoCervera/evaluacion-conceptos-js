@@ -48,15 +48,39 @@ for (let i = 0; dias < dias.length; i++) {
 
 /* ================= EJERCICIO 6 ==============*/
 
-/*creo el vector */
-let carrito = [];
+let carrito = []
+let articulos; 
+let precio;
+let unidades;
+let costoTotal = 0;
+//let costoTotal = costoTotal + (parseInt(precio) * parseInt(unidades));
 
-/*metodo de ingreso */
-articulo = prompt("ingresa un articulo");
-costoArt = prompt("costo del articulo ingresado");
+let ingreso = prompt("desea ingresar un articulo? si - no");
 
-/*lo que pusheo de articulo*/
-carrito.push(articulo);
+while(ingreso !== "no"){
+
+    
+        articulos = prompt("ingresa tu articulo");
+        console.log(articulos);
+        carrito.push(articulos)
+        console.log(carrito);
+        precio = parseInt(prompt("ingresa precio"));
+        unidades = parseInt(prompt("ingresa unidades"));
+        costoTotal = costoTotal + (parseInt(precio) * parseInt(unidades))
+        ingreso = prompt("desea seguir ingresando");
+}
 
 
-/**/
+    console.log("xxxxxxxxxxxxxxxx");
+    console.log("ITEMS");
+
+    for(let i = 0; i < carrito.length; i++){
+        console.log(" - " + carrito[i])
+    }
+    
+    console.log("Total a facturar: $"+ costoTotal)
+    console.log("xxxxxxxxxxxxxxxxx")
+
+
+
+
