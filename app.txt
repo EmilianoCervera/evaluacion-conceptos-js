@@ -1,4 +1,5 @@
 
+
 let carrito = []
 let articulos; 
 let precio;
@@ -7,6 +8,10 @@ let costoTotal = 0;
 //let costoTotal = costoTotal + (parseInt(precio) * parseInt(unidades));
 
 let ingreso = prompt("desea ingresar un articulo? si - no");
+
+do{
+    
+}
 
 while(ingreso !== "no"){
 
@@ -17,8 +22,18 @@ while(ingreso !== "no"){
         console.log(carrito);
         precio = parseInt(prompt("ingresa precio"));
         unidades = parseInt(prompt("ingresa unidades"));
-        ingreso = prompt("desea seguir ingresando");
         costoTotal = costoTotal + (parseInt(precio) * parseInt(unidades))
+        ingreso = prompt("desea seguir ingresando");
+
+        /*consulta = prompt("desea editar algun articulo? presiona 0")
+        if(consulta === "0"){
+            console.log(`lista de articulos: ${carrito}`)
+            numeroItem = prompt("indica que numero item")
+            if(numItem === carrito[i]){
+                carrito.pop(articulos)
+            }
+        }*/
+
 }
 
 
