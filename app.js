@@ -1,10 +1,8 @@
 /*ejercisios*/
 
 
-/*=================== EJERCICIO F ==================*/
 
-
-/*ejercicio suma */
+/*ejercicio suma  1 */
 
 /*let primerNumero = 0, segundoNumero,total;
 
@@ -22,6 +20,7 @@ function suma (primerNumero,segundoNumero){
 } 
 console.log(suma(primerNumero,segundoNumero))*/
 
+/*=================== EJERCICIO F ==================*/
 /*imc = peso / pow(altura / 100,2);
 imc = round(imc * 100) / 100; */
 
@@ -91,8 +90,10 @@ let articulos;
 let precio;
 let unidades;
 let costoTotal = 0;
-let numeroItem = carrito
-//let costoTotal = costoTotal + (parseInt(precio) * parseInt(unidades));
+let numeroItem = carrito;
+let modificar;
+let primerNumero;
+
 
 let ingreso = prompt("desea ingresar un articulo? si - no");
 
@@ -106,32 +107,36 @@ do{
         precio = parseInt(prompt("ingresa precio"));
         unidades = parseInt(prompt("ingresa unidades"));
         costoTotal = costoTotal + (parseInt(precio) * parseInt(unidades))
-        ingreso = prompt("desea seguir ingresando");
+        ingreso = confirm("agregar mas articulos?")
 
-    }while(ingreso !== "no"){
-        consulta = prompt("desea editar algun articulo? presiona 0")
-        console.log(`lista de articulos: ${carrito}`)
-        if(consulta === "0"){
-
-            for (let i = 0; numeroItem < carrito.length; i++) {
-
-                  numeroItem = carrito.splice(prompt("acanumero"),1);
-                }
-
-            }
+    }while(ingreso === true){
+        alert(carrito);
+        consulta = confirm("desea editar algun articulo?")
+        console.log(`Articulos cargados: ${carrito}`)
+        if(consulta === true){
+            numeroItem = carrito.splice(parseInt(prompt("item")),1,prompt("modificacion"));
+            alert(carrito);
             
-        }
+            while(consulta === true ){
+                consulta = confirm("desea realizar otro cambio?");
+                if(consulta === true){
+                    numeroItem = carrito.splice(parseInt(prompt("item")),1,prompt("modificacion"));
+                } 
+            };
+
+            console.log("xxxxxxxxxxxxxxxx");
+            console.log("ITEMS");
+
+            for(let i = 0; i < carrito.length; i++){
+                console.log(" - " + carrito[i])
+            }
+            console.log("Total a facturar: $"+ costoTotal)
+            console.log("xxxxxxxxxxxxxxxxx")
+            }
+          }  
+         
 
 
-    console.log("xxxxxxxxxxxxxxxx");
-    console.log("ITEMS");
-
-    for(let i = 0; i < carrito.length; i++){
-        console.log(" - " + carrito[i])
-    }
-    
-    console.log("Total a facturar: $"+ costoTotal)
-    console.log("xxxxxxxxxxxxxxxxx")
 
 
 
@@ -139,6 +144,4 @@ do{
 
 
 
-
-//let costoTotal = costoTotal + (parseInt(precio) * parseInt(unidades));
 
